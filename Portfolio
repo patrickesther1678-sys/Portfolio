@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: orange;
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ffcc80;
+    }
+
+    /* About */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+    #about .text {
+      flex: 2;
+    }
+    #about .photo {
+      flex: 1;
+      min-width: 200px;
+      height: 200px;
+      background-color: #333;
+      border: 2px solid orange;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffcc80;
+    }
+
+    /* Projects */
+    #projects {
+      margin: 40px 0;
+    }
+    #projects h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .project-list {
+      display: grid;
+      gap: 20px;
+    }
+    .project {
+      border: 1px solid orange;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #111;
+      text-align: center;
+    }
+    .project h3 {
+      margin-bottom: 10px;
+    }
+    .project p {
+      color: #ffcc80;
+      margin-bottom: 15px;
+    }
+    .project button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: orange;
+      color: black;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .project button:hover {
+      background: #ff9900;
+    }
+
+    /* Contact */
+    #contact {
+      margin: 40px 0;
+    }
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid orange;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      background: orange;
+      color: black;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #ff9900;
+    }
+
+    /* Thank You Message */
+    #thankyou {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffcc80;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Beginner Web Developer | Learning & Building</p>
+  </header>
+
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <div class="text">
+        <h2>About Me</h2>
+        <p>Hello! I’m a beginner web developer passionate about creating clean, simple, and user-friendly websites. I’m learning every day and building cool projects as I go.</p>
+      </div>
+      <div class="photo">Photo</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project">
+          <h3>Project One</h3>
+          <p>A simple landing page built with HTML & CSS.</p>
+          <button>View Project</button>
+        </div>
+        <div class="project">
+          <h3>Project Two</h3>
+          <p>A responsive portfolio layout for practice.</p>
+          <button>View Project</button>
+        </div>
+        <div class="project">
+          <h3>Project Three</h3>
+          <p>A mockup of a contact form styled with CSS.</p>
+          <button>View Project</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="https://formspree.io/f/xqadnayl" method="POST" target="hidden_iframe" onsubmit="showMessage()">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="thankyou">✅ Thank you! Your message has been sent.</div>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
+    </section>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("contactForm").style.display = "none";
+      document.getElementById("thankyou").style.display = "block";
+    }
+  </script>
+</body>
+</html>
